@@ -86,7 +86,8 @@ The JSON model of the **pin** resouce is:
 	* STATUS code 200
 		* On success
 <br/>
-**NOTE**: <i>These pin numbers refer to the GPIO pin numbers, not the generic numbering</>
+
+<b>NOTE</b>: <i>These pin numbers refer to the GPIO pin numbers, not the generic numbering</>
 
 
 ## Step 2: Try it out
