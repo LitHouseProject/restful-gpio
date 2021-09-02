@@ -87,7 +87,7 @@ The JSON model of the **pin** resouce is:
 		* On success
 <br/>
 
-<b>NOTE</b>: <i>These pin numbers refer to the GPIO pin numbers, not the generic numbering</>
+<b>NOTE</b>: <i>These pin numbers refer to the GPIO pin numbers, not the generic numbering<i/>
 
 
 ## Step 2: Try it out
