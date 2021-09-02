@@ -85,3 +85,12 @@ The JSON model of the **pin** resouce is:
 		```
 	* STATUS code 200
 		* On success
+**NOTE**: <i>These pin numbers refer to the GPIO pin numbers, not the generic numbering</>
+
+
+## Step 2: Try it out
+
+```
+> curl "http://localhost:5000/pins/"
+>  curl "http://localhost:5000/pins/1"
+> curl -X PATCH "http://localhost:5000/pins/3" -H "Content-Type: application/json" -d "{ \"state\": \"on\" }" 
