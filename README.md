@@ -1,6 +1,5 @@
 # restful-gpio
-This is a Flask app written in Python3. This app is a REST API backend to control the GPIO pins of a Raspberry Pi by making HTTP requests to the /pins and /pins/<id> endpoints. This project uses a breadboard outfitted with LEDs connected to the Raspberyy Pi's GPIO pins to demonstrate the correct function of the API calls. This app could easily be extended to trigger and process more complex events to control the pins of a Pi beyond lighting up a couple LEDs
-
+This a React frontend with a Flask backend (python 3) application. The app is a REST API backend to control the GPIO pins of a raspberry pi by making HTTP requests to the **/pins** and **/pins/<id>** endpoints. This project uses a breadboard, single LED Lights, and a raspberry pi to show a proof of concept on how to control LED lights via a website. This app could easily be trigger and process more complex events to control the pins of a Pi beyond lighting up an LED lights
 
 ## Step 1: HTTP Methods
 These requests use the standard HTTP Requests **GET**, **POST**, **PUT**, and **DELETE**. We also use **PATCH** for partial updates to enable us to just send a **state** update to an existing pin endpoint. This will make sending requests through Python requests library a little more succint as we'll mainly be interested in changing the state for making our light show 
