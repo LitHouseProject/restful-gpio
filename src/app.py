@@ -20,47 +20,47 @@ pin_model = api.model('pins', {
 
 
 class PinUtil(object):
-	'''
-	Utility class to help with remembering pins (basically my database)
-	'''
-	
-	def __init__(self):
+    '''
+    Utility class to help with remembering pins (basically my database)
+    '''
+    
+    def __init__(self):
             self.counter = 0
             self.pins = []
 
-	def get(self, id):
-            for pin in self.pins:
-                if pin['id'] == id:
-                    return pin
-            api.abort(404, f"pin {id} doesn't exist.")
+    def get(self, id):
+        for pin in self.pins:
+            if pin['id'] == id:
+                return pin
+        api.abort(404, f"pin {id} doesn't exist.")
 
-	def create(self, data):
-            pin = data
-            pin['id'] = self.counter = self.counter + 1
-            self.pins.append(pin)
-            GPIO.setup(pin['pin_num'], GPIO.OUT)
-            if pin['state'] == 'off':
-                GPIO.output(pin['pin_num'], GPIO.LOW)
-            elif pin['state'] == 'on':
-                GPIO.output(pin['pin_num'], GPIO.HIGH)
-
-            return pin
-
-	def update(self, id, data):
-            pin = self.get(id)
-            pin.update(data)  # this is the dict_object update method
-            GPIO.setup(pin['pin_num'], GPIO.OUT)
-            if pin['state'] == 'off':
-                GPIO.output(pin['pin_num'], GPIO.LOW)
-            elif pin['state'] == 'on':
-                GPIO.output(pin['pin_num'], GPIO.HIGH)
-
-            return pin
-
-	def delete(self, id):
-            pin = self.get(id)
+    def create(self, data):
+        pin = data
+        pin['id'] = self.counter = self.counter + 1
+        self.pins.append(pin)
+        GPIO.setup(pin['pin_num'], GPIO.OUT)
+        if pin['state'] == 'off':
             GPIO.output(pin['pin_num'], GPIO.LOW)
-            self.pins.remove(pin)
+        elif pin['state'] == 'on':
+            GPIO.output(pin['pin_num'], GPIO.HIGH)
+        
+        return pin
+
+    def update(self, id, data):
+        pin = self.get(id)
+        pin.update(data)  # this is the dict_object update method
+        GPIO.setup(pin['pin_num'], GPIO.OUT)
+        if pin['state'] == 'off':
+            GPIO.output(pin['pin_num'], GPIO.LOW)
+        elif pin['state'] == 'on':
+            GPIO.output(pin['pin_num'], GPIO.HIGH)
+
+        return pin
+
+    def delete(self, id):
+        pin = self.get(id)
+        GPIO.output(pin['pin_num'], GPIO.LOW)
+        self.pins.remove(pin)
 
 @ns.route('/')  # keep in mind this our ns-namespace (pins/)
 class PinList(Resource):

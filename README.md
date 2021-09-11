@@ -94,5 +94,5 @@ The JSON model of the **pin** resouce is:
 
 ```
 > curl "http://localhost:5000/pins/"
->  curl "http://localhost:5000/pins/1"
+> curl "http://localhost:5000/pins/1"
 > curl -X PATCH "http://localhost:5000/pins/3" -H "Content-Type: application/json" -d "{ \"state\": \"on\" }" 
