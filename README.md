@@ -90,9 +90,26 @@ The JSON model of the **pin** resouce is:
 <b>NOTE</b>: <i>These pin numbers refer to the GPIO pin numbers, not the generic numbering<i/>
 
 
-## Step 2: Try it out
+## Step 2: Try it out (via command line)
 
 ```
 > curl "http://localhost:5000/pins/"
 > curl "http://localhost:5000/pins/1"
 > curl -X PATCH "http://localhost:5000/pins/3" -H "Content-Type: application/json" -d "{ \"state\": \"on\" }" 
+```
+	
+## Step 3: CONTROL GPIO PIN through a web server
+
+	* Open a terminal and navigate to restful-gpio/src
+	```
+	> cd restful-gpio/src
+	> python app.py
+	```
+	
+	* Open up a separate terminal 
+	```
+	> cd restful-gpio/frontend
+	> npm start
+	```
+	<br/>
+	**NOTE**: proxy setup to **http://127.0.0.1:5000** which helps communicate with flask in package.json
