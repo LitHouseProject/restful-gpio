@@ -100,16 +100,15 @@ The JSON model of the **pin** resouce is:
 	
 ## Step 3: CONTROL GPIO PIN through a web server
 
-	* Open a terminal and navigate to restful-gpio/src
-	```
-	> cd restful-gpio/src
-	> python app.py
-	```
+* Open a terminal and navigate to restful-gpio/src
+```
+> cd restful-gpio/src
+> python app.py
+```
 	
-	* Open up a separate terminal 
-	```
-	> cd restful-gpio/frontend
-	> npm start
-	```
-	<br/>
-	**NOTE**: proxy setup to **http://127.0.0.1:5000** which helps communicate with flask in package.json
+* Open up a separate terminal 
+```
+> cd restful-gpio/frontend
+> npm start
+```
+**NOTE**: proxy setup to **http://127.0.0.1:5000** which helps communicate with flask in package.json
